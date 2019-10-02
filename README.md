@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It's a simple blog developed by me as a training.
 
-Things you may want to cover:
+technologies I used :
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+1- Ruby on Rails for back-end development
+2-Sqlite3 for database
+3-HTML,CSS,BootStrap front-end development
 
 * ...
