@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-http_basic_authenticate_with  name:"mego",password:"1234",except: [:index,:show] 
+    load_and_authorize_resource
      def index
     @posts=Post.all
     end
@@ -19,6 +19,7 @@ http_basic_authenticate_with  name:"mego",password:"1234",except: [:index,:show]
        # render plain:params[:post].inspect
        #@post = Post.new(post_params)
        @post=Post.new(post_params)
+       @post.author_id = current_user.id
       if(@post.save)
        redirect_to @post
       else

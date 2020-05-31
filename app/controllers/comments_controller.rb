@@ -1,8 +1,11 @@
 class CommentsController < ApplicationController
-  http_basic_authenticate_with  name:"mego",password:"1234"
+  load_and_authorize_resource
   def create
     @post=Post.find(params[:post_id])
-    @comment =@post.comments.create(comment_params)
+    @comment =@post.comments.new(comment_params)
+    @comment.author_id = current_user.id
+    @comment.save
+
     redirect_to post_path(@post)
       
   end
